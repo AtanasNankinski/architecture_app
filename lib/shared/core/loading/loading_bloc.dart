@@ -8,5 +8,4 @@ class LoadingBloc extends Bloc<LoadingEvent, bool> {
     on<StartLoading>((_, emit) => emit(true));
     on<StopLoading>((_, emit) => emit(false));
   }
-
 }
