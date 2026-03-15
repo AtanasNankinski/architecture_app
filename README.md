@@ -1,4 +1,4 @@
-# 🔧 _Flutter Bloc Demo_ 🔨
+# 🔧 _Simple Architecture App_ 🔨
 
 Simple application written on [Flutter](https://flutter.dev/) that aims to implements simple features using [Bloc state management](https://bloclibrary.dev/), proper architectural and design patterns.
 
