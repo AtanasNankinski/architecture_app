@@ -1,3 +1,7 @@
+# 🔧 _Flutter Bloc Demo_ 🔨
+
+Simple application written on [Flutter](https://flutter.dev/) that aims to implements simple features using [Bloc state management](https://bloclibrary.dev/), proper architectural and design patterns.
+
 ## Installation and Usage
 
 Due to the generated files not being pushed to the git repository in order to build the project a build_runner command must be called first.
