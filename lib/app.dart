@@ -24,12 +24,10 @@ class App extends StatelessWidget {
       ],
       child: BlocBuilder<ThemeBloc, ThemeData>(
         builder: (context, state) {
-          final themeState = context.watch<ThemeBloc>();
-
           return MaterialApp.router(
             routerConfig: _appRouter.config(),
             title: "Architecture Demo App",
-            theme: themeState.state,
+            theme: state,
             builder: (context, child) =>
                 LoadingWrapper(
                   child: ErrorWrapper(

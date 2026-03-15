@@ -13,19 +13,38 @@ class LoadingWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<LoadingBloc, bool>(
-      builder: (context, isLoading) =>
+    return BlocBuilder<LoadingBloc, LoadingState>(
+      builder: (context, loadingState) =>
         Stack(
           children: [
             child ?? SizedBox.shrink(),
-            if(isLoading) ...[
+            if(loadingState.isLoading) ...[
               SizedBox(
                 height: context.height,
                 width: context.width,
                 child: ModalBarrier(color: AppColors.modalBarrierColor, dismissible: false),
               ),
               Center(
-                child: CircularProgressIndicator(),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    CircularProgressIndicator(),
+                    if(loadingState.primaryOperationLabel != null) ...[
+                      SizedBox(height: 16),
+                      Text(
+                        loadingState.primaryOperationLabel!,
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
+                    ],
+                    if(loadingState.operationCount > 1) ...[
+                      SizedBox(height: 8),
+                      Text(
+                        '${loadingState.operationCount} operations running',
+                        style: Theme.of(context).textTheme.bodySmall,
+                      ),
+                    ],
+                  ],
+                ),
               ),
             ],
           ],

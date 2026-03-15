@@ -1,21 +1,19 @@
 import 'dart:convert';
 
-import 'package:flutter/services.dart';
-
 import 'package:architecture_demo/data/model/app_data.dart';
+import 'package:architecture_demo/data/data_source/remote.dart';
 import 'package:architecture_demo/domain/repository/data_repository.dart';
 
 class DataRepository implements IDataRepository{
+  final RemoteData _remoteData;
+
+  DataRepository(this._remoteData);
+
   @override
   Future<List<AppData>> deleteDataValue(AppData value) async {
-    // Simulate Http call delay
-    await Future.delayed(Duration(seconds: 2));
+    final rawData = await _remoteData.getData();
 
-    final jsonString = await rootBundle.loadString(
-      'assets/data/app_data.json',
-    );
-
-    final decoded = jsonDecode(jsonString) as Map<String, dynamic>;
+    final decoded = jsonDecode(rawData) as Map<String, dynamic>;
 
     final list = decoded['app_data'] as List<dynamic>;
 
@@ -30,12 +28,7 @@ class DataRepository implements IDataRepository{
 
   @override
   Future<List<AppData>> loadData() async {
-    // Simulate Http call delay
-    await Future.delayed(Duration(seconds: 2));
-
-    final jsonString = await rootBundle.loadString(
-      'assets/data/app_data.json',
-    );
+    final jsonString = await _remoteData.getData();
 
     final decoded = jsonDecode(jsonString) as Map<String, dynamic>;
 

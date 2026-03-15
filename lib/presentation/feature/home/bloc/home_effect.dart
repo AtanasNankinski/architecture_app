@@ -10,6 +10,18 @@ final class ShowErrorEffect extends HomeEffect implements IShowErrorEffect {
   ShowErrorEffect(this.error);
 }
 
-final class StartLoadingEffect extends HomeEffect implements IStartLoadingEffect {}
+final class StartLoadingEffect extends HomeEffect implements IStartLoadingEffect {
+  @override
+  final String identifier;
+  @override
+  final String label;
 
-final class StopLoadingEffect extends HomeEffect implements IStopLoadingEffect {}
+  StartLoadingEffect(this.identifier, this.label);
+}
+
+final class StopLoadingEffect extends HomeEffect implements IStopLoadingEffect {
+  @override
+  final String identifier;
+
+  StopLoadingEffect(this.identifier);
+}

@@ -1,0 +1,1 @@
+// Here we would put call to local db or shared preferences

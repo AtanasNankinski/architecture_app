@@ -1,0 +1,64 @@
+{
+  "app_data": [
+    {
+      "id": "1",
+      "title": "Item One",
+      "dataNumber": 10,
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "title": "Item Two",
+      "dataNumber": 20,
+      "isActive": false
+    },
+    {
+      "id": "3",
+      "title": "Item Three",
+      "dataNumber": 5,
+      "isActive": true
+    },
+    {
+      "id": "4",
+      "title": "Item Four",
+      "dataNumber": 15,
+      "isActive": false
+    },
+    {
+      "id": "5",
+      "title": "Item Five",
+      "dataNumber": 8,
+      "isActive": true
+    },
+    {
+      "id": "6",
+      "title": "Item Six",
+      "dataNumber": 42,
+      "isActive": true
+    },
+    {
+      "id": "7",
+      "title": "Item Seven",
+      "dataNumber": 3,
+      "isActive": false
+    },
+    {
+      "id": "8",
+      "title": "Item Eight",
+      "dataNumber": 27,
+      "isActive": true
+    },
+    {
+      "id": "9",
+      "title": "Item Nine",
+      "dataNumber": 11,
+      "isActive": false
+    },
+    {
+      "id": "10",
+      "title": "Item Ten",
+      "dataNumber": 99,
+      "isActive": true
+    }
+  ]
+}

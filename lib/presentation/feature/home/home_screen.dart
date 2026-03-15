@@ -28,8 +28,7 @@ class HomeScreen extends StatelessWidget {
                 Text(state),
                 ElevatedButton(
                   onPressed: () {
-                    context.read<HomeBloc>().add(
-                        ChangeTextEvent("Test Test Test"));
+                    context.read<HomeBloc>().add(ChangeTextEvent());
                   },
                   child: Text("Change Text"),
                 ),
